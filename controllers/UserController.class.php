@@ -29,6 +29,12 @@ class UserController extends Controller
         }
     }
 
+    public function adel(){
+        $this->model->del($_GET['id']);
+        $data = $this->model->order('id desc')->select();
+        echo json_encode($data);
+    }
+
     public function add()
     {
         $this->assign('title','添加用户');
