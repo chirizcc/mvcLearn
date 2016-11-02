@@ -144,7 +144,7 @@ class Model{
 	* @param string $value 要查询的字段名
 	* @return array $data 返回一维数组
 	*/
-	public function find($field,$value){
+	public function find($value,$field = 'id'){
 		$sql = "select * from {$this->tabName} where {$field} = '{$value}'";
 
 		$data = $this->query($sql);
@@ -160,7 +160,7 @@ class Model{
     * @param array $data 要添加的数据 从$_POST获取
     * @return 自增id
     */
-	public function add($data = array()){
+	public function insert($data = array()){
 		if(empty($data)){
 			$data = $_POST;
 		}
@@ -202,7 +202,7 @@ class Model{
     * @param array $data 要更新的数据 从$_POST获取
     * @return 影响的数据条数
     */
-	public function update($data = array()){
+	public function updata($data = array()){
 		if(empty($data)){
 			$data = $_POST;
 		}

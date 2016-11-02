@@ -13,4 +13,20 @@ class Controller extends Smarty
         $this->caching = CACHING;
         $this->cache_lifetime = CACHE_LIFETIME;
     }
+
+    public function __call($funName,$params)
+    {
+        header('HTTP/1.0 404 not fount');
+        echo '<h1>404 NOT FOUNT</h1>';
+        die;
+    }
+
+    public function redirect($message, $url = null){
+        echo '<script>alert("'.$message.'")</script>';
+        if(empty($url)) {
+            echo '<script>history.back()</script>';
+        }else {
+            echo '<script>location.href="'.$url.'"</script>';
+        }
+    }
 }

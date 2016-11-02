@@ -1,0 +1,19 @@
+<{extends file="User/index.html"}>
+<{block name="content"}>
+<table class="table table-striped h3">
+    <form action="./index.php?c=User&a=updata" method="post">
+        <input type="hidden" name="id" value="<{$data.id}>">
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" name="name" value="<{$data.name}>"></td>
+        </tr>
+        <tr>
+            <td>家乡:</td>
+            <td><input type="text" name="place" value="<{$data.place}>"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input class="btn btn-success btn-block" type="submit" value="修改"></td>
+        </tr>
+    </form>
+</table>
+<{/block}>
