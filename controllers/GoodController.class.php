@@ -1,6 +1,6 @@
 <?php
 
-class GoodController
+class GoodController extends Controller
 {
 
 	public function index()

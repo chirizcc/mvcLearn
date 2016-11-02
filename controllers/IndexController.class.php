@@ -1,13 +1,11 @@
 <?php
 
-class IndexController
+class IndexController extends Controller
 {
 
 	public function index()
 	{
-		// echo 'Index index';
-		global $smarty;
-		$smarty->display('Index/index.html');
+		$this->display('Index/index.html');
 	}
 
 }
